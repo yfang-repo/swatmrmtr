@@ -1,11 +1,11 @@
 The following notes are for running the SWAT-MRMT-R model on PNNL's constance supercomputer.
 
 Notes for source codes:
-1) SWAT originiated from revision 664
+1) SWAT originated from revision 664
 2) PFLOTRAN originated from hash bc0bb2d 
 3) petsc hash 1a9d3c3 is needed to compile PFLOTRAN and SWAT
 
-To generate an excutable:
+To generate an executable:
 1) Install petsc
    git clone https://gitlab.com/petsc/petsc petsc
    cd petsc
@@ -46,7 +46,7 @@ To generate an excutable:
    make swatmrmtr.e
 
 To run the model:
-   swat.e
+   swatmrmtr.e
 
 Apart from the input files for the native swat model, four more files are required to run swatmrmtr.e:
 1) Input file for the reaction parameters.  Default file name: pflotran.in.  
