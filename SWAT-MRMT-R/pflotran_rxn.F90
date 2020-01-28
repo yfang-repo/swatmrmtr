@@ -453,23 +453,8 @@ subroutine pflotran_rxn_init( )
   do jrch = 1, mch-1
      xv_mu = max(ts_v(jrch,1),1.d-20)
      xl_mu = max(ts_l(jrch,1),1.d-20)
-!     do i=1,itm_tmp
-!       if(xv_mu > 1.e4 .or. xv_mu == 0.d0) then
-!        ts_v(jrch,i) = xv_mu
-!       else
-        !call transfer_coe1(itm_tmp,dlog(xv_mu),x_sigma,ts_v(jrch,:)) 
-        call transfer_coex(itm_tmp,dlog(xv_mu),x_sigma,ts_v(jrch,:)) 
-!       endif
-!       if(xl_mu > 1.e4 .or. xl_mu == 0.d0) then
-!        ts_l(jrch,i) = xl_mu
-!       else
-         !call transfer_coe1(itm_tmp,dlog(xl_mu),x_sigma,ts_l(jrch,:)) 
-         call transfer_coex(itm_tmp,dlog(xl_mu),x_sigma,ts_l(jrch,:)) 
-!       endif
-!     enddo  
-!test uniform 
-!    ts_v(jrch,:) = xv_mu
-!    ts_l(jrch,:) = xl_mu
+     call transfer_coex(itm_tmp,xv_mu,x_sigma,ts_v(jrch,:)) 
+     call transfer_coex(itm_tmp,xl_mu,x_sigma,ts_l(jrch,:)) 
   enddo
   endif
 
