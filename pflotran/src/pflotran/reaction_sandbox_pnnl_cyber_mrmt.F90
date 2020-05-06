@@ -1378,8 +1378,8 @@ subroutine CyberReact(this,Residual,Jacobian,compute_derivative, &
     this%alpha(i) = rt_auxvar%auxiliary_data(i+j)
 !print *,'i-',i,this%alpha(i),this%vol_frac_mrmt(i)%ptr
   enddo
-  do i = 1, MRMT
   do j=1,7
+  do i = 1, MRMT
     irxn = irxn + 1
     this%stoich_row(2,irxn)%ptr = this%vol_frac_mrmt(i)%ptr !update multirate reaction stoichometry
   enddo
